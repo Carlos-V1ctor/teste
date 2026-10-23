@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Contato Semântico</title>
+</head>
+<body>
+    <main>
+        <section>
+            <header>
+                <h2>Cadastrar novo contato</h2>
+                <p>Preencha os dados abaixo para adicionar um novo contato à sua agenda</p>
+            </header>
+
+            <form action="/salvar-contato" method="POST">  
+
+                <!-- Agrupamento Semântico 1: Identificação-->
+                 <fieldset>
+                    <legend>Identificação Pessoal</legend>
+                    
+                    <p>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome"
+                        autocomplete="primeiro-nome" required>
+                    </p>
+
+                    <p>
+                        <label for="sobrenome">Sobrenome:</label>
+                        <input type="text" id="sobrenome" name="sobrenome"
+                        autocomplete="sobrenome" required>
+                    </p>
+                 </fieldset>
+
+                 <!-- Agrupamento Semântico 2: Contato e Localização-->
+                  <fieldset>
+                    <legend>Contato e Localização</legend>
+
+                    <p>
+                         <label for="email">E-mail:</label>
+                        <input type="text" id="email" name="email"
+                        autocomplete="email" required
+                        placeholder="exemplo@dominio.com">
+                    </p>
+
+                    <p>
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone"
+                        pattern="\(\d{2}\)\d{5}-\d{4}"
+                        placeholder="(xx)xxxxx-xxxx"title="0 formato deve ser (xx) xxxxx-xxxx"
+                        autocomplete="Codigo-area" required>
+                    </p>
+
+                    <p>
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade"
+                        autocomplete="endereco-cidade" required>
+                    </p>
+
+                    <p>
+                        <label for="estado">Estado:</label>
+                        <select name="" id="estado" name="estado"
+                        autocomplete="endereco-estado" required>
+                        <option value="">Selecione um estado...</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        </select>
+                    </p>
+                  </fieldset>
+
+                  <button type="submit">Salvar Contato</button>
+            </form>
+        </section>
+    </main>
+    
+</body>
+</html>
